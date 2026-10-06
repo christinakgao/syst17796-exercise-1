@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 25, 2022 
- * @modifier Ke Xin (Christina) Gao
+ * @modifier Ke Xin (Christina) Gao Oct, 05, 2026
  */
 public class CardTrick {
     
@@ -88,10 +88,9 @@ public class CardTrick {
      * A simple method to print out personal information. Follow the instructions to 
      * replace this information with your own.
      * @author Paul Bonenfant Jan 2022
+     * @modifier Ke Xin (Christina) Gao Oct 2026
      */
     private static void printInfo() {
-        
-        // "I'm done!"
         
         System.out.println("Congratulations, you guessed right!");
         System.out.println();
@@ -105,7 +104,8 @@ public class CardTrick {
         System.out.println("-- Fashion and clothing design");
         System.out.println();
 
-        System.out.println("That's all about me.");
+        System.out.println("I'm a forgetful person, so I have to redo the fetch and merge part of the assignment because I forgot to add something.");
+        System.out.println("Whoops. /:");
         System.out.println();
         
     
