@@ -2,7 +2,6 @@ package exercise1;
 
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Arrays;
 
 /**
  * A class that fills a hand of 7 cards with random Card Objects and then asks the user to pick a card.
@@ -30,6 +29,9 @@ public class CardTrick {
             // setting a random suit for the card
             card.setSuit(Card.SUITS[r.nextInt(4)]);
             
+            // adding card to hand
+            hand[i] = card;
+            
             //card.setValue(insert call to random number generator here)
             // 
             //card.setSuit(Card.SUITS[insert call to random number between 0-3 here])
@@ -39,21 +41,32 @@ public class CardTrick {
 
         Scanner scan = new Scanner(System.in);
         
+        // prompting for suit
         System.out.print("Enter suit (Clubs/Spades/Diamonds/Hearts): ");
-        String s_Guess = scan.nextLine();
+        String suit = scan.nextLine();
         
+        // prompting for card value
         System.out.print("Enter card value (1-13): ");
         int value = scan.nextInt();
         
-        Card guess = new Card();
-        guess.setValue(value);
-        guess.setSuit(s_Guess);
-        
         scan.close();
         
-        if (Arrays.asList(hand).contains(guess)) {
-            printInfo();
+        int counter = 1;
+        
+        // looping through each card in hand to check for value & suit match
+        for (Card c : hand) {
+            if (c.getValue() == value && c.getSuit().equals(suit)) {
+                printInfo();
+            } else {
+                System.out.printf("Card %d is not a match.\n", counter);
+            }
+            counter++;
+            
         }
+        
+        // end
+        System.out.println("End of game.");
+        
         // insert code to ask the user for Card value and suit, create their card
         // and search the hand here. 
         // Hint: You can ask for values 1 to 10, and then
