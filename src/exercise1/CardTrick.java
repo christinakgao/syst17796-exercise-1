@@ -94,15 +94,16 @@ public class CardTrick {
         System.out.println("Congratulations, you guessed right!");
         System.out.println();
         
-        System.out.println("My name is Ke Xin, but I prefer to be called Christina.");
-        System.out.println();	
+        System.out.println("My name is Ke Xin, but I prefer to be called Christina. (:");
 
-        System.out.println("My hobbies:");
+        System.out.println("My hobbies are:");
         System.out.println("-- Playing video games");
         System.out.println("-- Cooking");
         System.out.println("-- Watching crime/mystery TV shows/movies");
         System.out.println("-- Fashion and clothing design");
+        System.out.println();
 
+        System.out.println("That's all about me.");
         System.out.println();
         
     
