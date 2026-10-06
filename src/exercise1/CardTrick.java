@@ -39,6 +39,8 @@ public class CardTrick {
             hand[i] = card;
         }
 
+        System.out.println("Pick any card!");
+        
         Scanner scan = new Scanner(System.in);
         
         // insert code to ask the user for Card value and suit, create their card
