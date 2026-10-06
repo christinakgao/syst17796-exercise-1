@@ -23,6 +23,12 @@ public class CardTrick {
         for (int i = 0; i < hand.length; i++) {
             Card card = new Card();
             
+            //card.setValue(insert call to random number generator here)
+            // 
+            //card.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
+            //       Don't worry about duplicates at this point
+            
             // setting a random value for the card between 1-13
             card.setValue(r.nextInt((13 - 1) + 1) + 1);
             
@@ -31,41 +37,9 @@ public class CardTrick {
             
             // adding card to hand
             hand[i] = card;
-            
-            //card.setValue(insert call to random number generator here)
-            // 
-            //card.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-            // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
-            //       Don't worry about duplicates at this point
         }
 
         Scanner scan = new Scanner(System.in);
-        
-        // prompting for suit
-        System.out.print("Enter suit (Clubs/Spades/Diamonds/Hearts): ");
-        String suit = scan.nextLine();
-        
-        // prompting for card value
-        System.out.print("Enter card value (1-13): ");
-        int value = scan.nextInt();
-        
-        scan.close();
-        
-        int counter = 1;
-        
-        // looping through each card in hand to check for value & suit match
-        for (Card c : hand) {
-            if (c.getValue() == value && c.getSuit().equals(suit)) {
-                printInfo();
-            } else {
-                System.out.printf("Card %d is not a match.\n", counter);
-            }
-            counter++;
-            
-        }
-        
-        // end
-        System.out.println("End of game.");
         
         // insert code to ask the user for Card value and suit, create their card
         // and search the hand here. 
@@ -76,6 +50,35 @@ public class CardTrick {
         // Then loop through the cards in the array to see if there's a match.
         
         // If the guess is successful, invoke the printInfo() method below.
+        
+        // creating new card and assigning it value and suit based on user input
+        Card guess = new Card();
+        
+        // prompting for suit
+        System.out.print("Enter suit (Clubs/Spades/Diamonds/Hearts): ");
+        guess.setSuit(scan.nextLine());
+        
+        // prompting for card value
+        System.out.print("Enter card value (1-13): ");
+        guess.setValue(scan.nextInt());
+          
+        scan.close();
+        
+        int counter = 1;
+        
+        // looping through each card in hand to check for value & suit match
+        for (Card c : hand) {
+            if (c.getValue() == guess.getValue() && c.getSuit().equals(guess.getSuit())) {
+                printInfo();
+            } else {
+                System.out.printf("Card %d is not a match.\n", counter);
+            }
+            counter++;
+            
+        }
+        
+        // end
+        System.out.println("End of game.");
         
     }
 
